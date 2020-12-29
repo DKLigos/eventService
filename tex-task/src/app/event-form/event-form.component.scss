@@ -1,0 +1,22 @@
+.wrap-form{
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+.eventForm{
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
+  div{
+    margin-bottom: 10px;
+  }
+  div:last-child{
+    margin-bottom: 0;
+  }
+}
+.block-btn{
+  display: flex;
+  justify-content: center;
+  .btn:first-child{
+    margin-right: 10px;
+  }
+}

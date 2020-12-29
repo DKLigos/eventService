@@ -1,0 +1,42 @@
+.backdrop {
+  z-index: 6;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  box-shadow: 0 5px 200px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  z-index: 6;
+  overflow: hidden;
+  background: #fff;
+  vertical-align: center;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content{
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+  word-break: break-all;
+  div{
+    margin-bottom: 10px;
+    span{
+      font-weight: bold;
+    }
+  }
+  div:last-child{
+    margin-bottom: 0;
+  }
+}

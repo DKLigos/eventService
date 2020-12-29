@@ -1,0 +1,29 @@
+<ng-container *ngIf="display$ | async as display">
+  <div *ngIf="display === 'open'"
+       (click)="close()" class="backdrop">
+    <div class="modal">
+      <div class="content" (click)="$event.stopPropagation()">
+        <div>
+          <span>ФИО</span>
+          <p>{{data.fio}}</p>
+        </div>
+        <div>
+          <span>Подразделение</span>
+          <p>{{data.department}}</p>
+        </div>
+        <div>
+          <span>Событие</span>
+          <p>{{data.listEvent}}</p>
+        </div>
+        <div>
+          <span>Тема</span>
+          <p>{{data.theme}}</p>
+        </div>
+        <div>
+          <span>Содержание</span>
+          <p>{{data.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

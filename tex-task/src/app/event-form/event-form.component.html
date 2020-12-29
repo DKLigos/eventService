@@ -1,0 +1,81 @@
+<div class="wrap-form">
+  <form  [formGroup]="eventForm" class="eventForm ">
+    <div class="form-control"[ngClass]="{invalid: this.validationService.isControlInvalid(eventForm.get('fio'))}">
+      <label class="bold">ФИО*</label>
+      <p><input  type="text"  formControlName="fio"/></p>
+      <div
+        *ngIf="this.validationService.isControlInvalid(eventForm.get('fio'))"
+        class="validation"
+      >
+        <small *ngIf="eventForm.get('fio').errors.required">
+          Введите Имя
+        </small>
+      </div>
+    </div>
+    <div class="form-control"[ngClass]="{invalid: this.validationService.isControlInvalid(eventForm.get('department'))}">
+      <label class="bold">Подразделение*</label>
+      <p><input  type="text"  formControlName="department"/></p>
+      <div
+        *ngIf="this.validationService.isControlInvalid(eventForm.get('department'))"
+        class="validation"
+      >
+        <small *ngIf="eventForm.get('department').errors.required">
+          Введите подразделение
+        </small>
+      </div>
+    </div>
+    <div class="form-control"[ngClass]="{invalid: this.validationService.isControlInvalid(eventForm.get('listEvent'))}">
+      <label class="bold">Список событий*</label>
+      <p><select   formControlName="listEvent">
+        <option>Event1</option>
+        <option>Event2</option>
+        <option>Event3</option>
+      </select></p>
+      <div
+        *ngIf="this.validationService.isControlInvalid(eventForm.get('listEvent'))"
+        class="validation"
+      >
+        <small *ngIf="eventForm.get('listEvent').errors.required">
+          Выберите событие
+        </small>
+      </div>
+    </div>
+    <div  class="form-control"[ngClass]="{invalid: this.validationService.isControlInvalid(eventForm.get('theme'))}">
+      <label class="bold">Тема*</label>
+      <p><input  type="text"  formControlName="theme"/></p>
+      <div
+        *ngIf="this.validationService.isControlInvalid(eventForm.get('theme'))"
+        class="validation"
+      >
+        <small *ngIf="eventForm.get('theme').errors.required">
+          Введите тему
+        </small>
+      </div>
+    </div>
+    <div class="form-control"[ngClass]="{invalid: this.validationService.isControlInvalid(eventForm.get('description'))}">
+      <label class="bold">Содержание*</label>
+      <p><input  type="text"  formControlName="description"/></p>
+      <div
+        *ngIf="this.validationService.isControlInvalid(eventForm.get('description'))"
+        class="validation"
+      >
+        <small *ngIf="eventForm.get('description').errors.required">
+          Введите содержание
+        </small>
+      </div>
+    </div>
+    <div>
+      <label class="bold">Текущая дата</label>
+      <p><input  type="text"  readonly  formControlName="currentDate"/></p>
+    </div>
+    <div>
+      <label class="bold">Текущее время</label>
+      <p><input  type="text"  readonly formControlName="currentTime"/></p>
+    </div>
+
+    <div class="block-btn">
+      <button type="button" class="btn" (click)="submit()">Применить</button>
+      <button type="button" class="btn" (click)="clear()">Очистить</button>
+    </div>
+  </form>
+</div>
